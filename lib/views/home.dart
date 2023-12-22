@@ -47,6 +47,8 @@ class _HomeState extends State<Home> {
               TextFormField(
                 decoration: const InputDecoration(
                   hintText: 'Search movie in your city...',
+                  prefixIcon: Icon(Icons.search, color: AppTheme.white),
+                  hintStyle: TextStyle(color: AppTheme.white),
                 ),
                 onChanged: (value) {
                   print(value);
@@ -58,7 +60,7 @@ class _HomeState extends State<Home> {
               ),
               const Text(
                 'TRENDING',
-                style: TextStyle(color: AppTheme.white, fontSize: 16),
+                style: TextStyle(color: AppTheme.white, fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const SizedBox(
                 height: 16,
@@ -74,7 +76,7 @@ class _HomeState extends State<Home> {
               ),
               const Text(
                 'NOW PLAYING',
-                style: TextStyle(color: AppTheme.white, fontSize: 16),
+                style: TextStyle(color: AppTheme.white, fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const SizedBox(
                 height: 16,
@@ -86,7 +88,7 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
-      backgroundColor: AppTheme.grey,
+      backgroundColor: AppTheme.blue,
       bottomNavigationBar: const BottomNavigation(),
     );
   }
