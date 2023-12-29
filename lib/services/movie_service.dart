@@ -3,7 +3,7 @@ import 'package:flutter_movies/models/movie.dart';
 import 'package:dio/dio.dart';
 
 class MovieService {
-  final String  _token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNTQ3MjZkZGFhMzUyMzEwMGE0MzI2NGQ4YzM5NzJiNyIsInN1YiI6IjVmZDZjYjgxNjJmMzM1MDAzZWZlMWM1ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4eHwNPG5OCyMIYXrnBgN32GNX8KFO0SVqR4KZiKSXFU';
+  final String  _token = const String.fromEnvironment('TOKEN');
 
   Future<List<Movie>> getByPageAndQuery({int page = 1, String? query}) async {
     final dio = Dio(BaseOptions(
@@ -22,7 +22,8 @@ class MovieService {
     };
 
     if (query != null) params['query'] = query.replaceAll(' ', '+');
-
+    print(_token);
+    
     final res = await dio.get('https://api.themoviedb.org/3/discover/movie', queryParameters: params);
 
     final response = ApiResponse.fromMap(res.data);
@@ -30,3 +31,4 @@ class MovieService {
     return response.results;
   }
 }
+

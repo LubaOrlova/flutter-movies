@@ -59,7 +59,7 @@ class NowPlayingMovieCard extends StatelessWidget {
                       width: 245,
                       child: Text(
                         movie.title,
-                        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: AppTheme.white),
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: AppTheme.white),
                       ),
                     ),
                     Spacer(),
@@ -71,7 +71,7 @@ class NowPlayingMovieCard extends StatelessWidget {
                   '${movie.releaseDate.year}-${movie.releaseDate.month.toString().padLeft(2, '0')}-${movie.releaseDate.day.toString().padLeft(2, '0')}',
                   style: TextStyle(fontSize: 12, color: AppTheme.white),
                 ),
-                SizedBox(height: 4),
+                SizedBox(height: 5),
                 Row(
                   children: [
                     Chip(label: Text('XXI',style: TextStyle(fontWeight: FontWeight.bold, color: AppTheme.white)), backgroundColor: AppTheme.grey,),
